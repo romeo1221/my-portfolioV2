@@ -190,10 +190,6 @@ const skillCategories = [
         name: "Vue.js",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
       },
-      {
-        name: "Bootstrap",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
-      },
     ],
   },
   {
@@ -211,10 +207,6 @@ const skillCategories = [
       {
         name: "Node.js",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-      },
-      {
-        name: "API Design",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
       },
     ],
   },
@@ -236,7 +228,7 @@ const skillCategories = [
       },
       {
         name: "TypeScript",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
       },
     ],
   },
@@ -249,16 +241,8 @@ const skillCategories = [
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
       },
       {
-        name: "PostgreSQL",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
-      },
-      {
         name: "SQLite",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
-      },
-      {
-        name: "MongoDB",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
       },
     ],
   },
@@ -331,21 +315,13 @@ const hobbies = [
     icon: "🎵",
     description: "Playing instruments and discovering new artists",
   },
+
   {
-    name: "Photography",
-    icon: "📸",
-    description: "Capturing moments and experimenting with visual composition",
+    name: "Reading",
+    icon: "📚",
+    description: "Diving into tech blogs, fiction, and non-fiction books",
   },
-  {
-    name: "Tech Blogging",
-    icon: "✍️",
-    description: "Writing about coding experiences and sharing knowledge",
-  },
-  {
-    name: "Open Source",
-    icon: "🌍",
-    description: "Contributing to community projects and learning from others",
-  },
+
   {
     name: "Learning",
     icon: "📚",
@@ -355,40 +331,10 @@ const hobbies = [
 
 const achievements = [
   {
-    title: "Full-Stack Portfolio",
-    description: "Built complete portfolio with Vue.js frontend",
-    year: "2025",
-    icon: "🏆",
-  },
-  {
     title: "Laravel Certification",
-    description: "Completed advanced Laravel development course",
-    year: "2024",
+    description: "Completed Computer Science course",
+    year: "2025",
     icon: "🎓",
-  },
-  {
-    title: "Hackathon Participant",
-    description: "Participated in local coding hackathon",
-    year: "2024",
-    icon: "💻",
-  },
-  {
-    title: "Database Design",
-    description: "Designed efficient database schemas for multiple projects",
-    year: "2023",
-    icon: "🗄️",
-  },
-  {
-    title: "First Web App",
-    description: "Successfully deployed first full-stack application",
-    year: "2023",
-    icon: "🚀",
-  },
-  {
-    title: "Git & Version Control",
-    description: "Mastered collaborative development workflows",
-    year: "2022",
-    icon: "📝",
   },
 ];
 
@@ -396,7 +342,7 @@ const timeline = [
   {
     year: "2021",
     title: "Started Programming Journey",
-    description: "Began learning HTML, CSS, and JavaScript fundamentals",
+    description: "Began learning Basic Programming fundamentals",
   },
   {
     year: "2022",
@@ -405,18 +351,19 @@ const timeline = [
   },
   {
     year: "2023",
-    title: "Framework Mastery",
-    description: "Learned Laravel and Vue.js, completed internship projects",
-  },
-  {
-    year: "2024",
     title: "Full-Stack Projects",
     description: "Built complete applications from database to frontend",
   },
   {
+    year: "2024",
+    title: "Deep Learning Model Development",
+    description:
+      "Trained, validated, and deployed a cutting-edge deep learning model for image classification.",
+  },
+  {
     year: "2025",
-    title: "Professional Portfolio",
-    description: "Created this portfolio and actively seeking opportunities",
+    title: "Thesis project & Portfolio Launch",
+    description: "Passed the Thesis defense & Created this portfolio and actively seeking opportunities",
   },
 ];
 

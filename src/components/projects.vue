@@ -131,7 +131,7 @@ const projects = ref([
     description:
       "We developed BEEP, a system for the Laoag-Batac-Paoay Transportation Group Inc. It manages bus operators, drivers, and schedules while letting users check bus availability. The system supports creating, reading, updating, and deleting records, with a user-friendly interface for efficient management and real-time updates.",
     picture_url:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+      "beep.png",
     // project_file_url: "#download-ecommerce",
   },
   {
@@ -140,7 +140,7 @@ const projects = ref([
     description:
       "Our final project is a coffee shop website made by our team of three. It has user and admin pages where customers can order products and manage their profiles, while admins handle product availability. The site also includes a shopping cart and login/logout features.",
     picture_url:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+      "webdev.png",
   },
   {
     id: 3,
@@ -148,7 +148,7 @@ const projects = ref([
     description:
       "My thesis focuses on using TinyBERT, a lightweight transformer model, for sarcasm detection in text. The goal is to improve accuracy in identifying sarcastic expressions by fine-tuning TinyBERT and comparing its performance with other models. This research highlights applications in sentiment analysis, online communication, and intelligent systems.",
     picture_url:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
+      "thesis.png",
     // project_file_url: "#download-taskapp",
   },
   {
@@ -157,7 +157,7 @@ const projects = ref([
     description:
       "Nutri Iloco is a mobile application concept that uses image processing to detect the nutritional content of local Ilocano dishes. For this project, we focused on the UI/UX design, creating an intuitive and user-friendly interface that helps users track food intake, promote healthy eating habits, and support awareness of traditional cuisine through technology.",
     picture_url:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
+      "nutri.png",
     // project_file_url: "#download-taskapp",
   },
   {
@@ -166,7 +166,7 @@ const projects = ref([
     description:
       "CuddleBOT is an emotional chatbot concept designed to provide users with a comforting and engaging conversational experience. For this project, we focused on the UI/UX design, creating a friendly and empathetic interface that supports emotional well-being and enhances user interaction.",
     picture_url:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
+      "cuddle.png",
     // project_file_url: "#download-taskapp",
   },
 ]);
