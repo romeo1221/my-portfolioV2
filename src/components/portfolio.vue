@@ -10,22 +10,38 @@
         <span :class="{ open: menuOpen }"></span>
       </div>
       <nav :class="{ open: menuOpen }">
-        <a href="#about" @click="menuOpen = false" class="nav-link">
+        <router-link
+          to="/about"
+          @click.native="menuOpen = false"
+          class="nav-link"
+        >
           <span class="nav-text">About</span>
           <span class="nav-hover-effect"></span>
-        </a>
-        <a href="#projects" @click="menuOpen = false" class="nav-link">
+        </router-link>
+        <router-link
+          to="/projects"
+          @click.native="menuOpen = false"
+          class="nav-link"
+        >
           <span class="nav-text">Projects</span>
           <span class="nav-hover-effect"></span>
-        </a>
-        <a href="#skills" @click="menuOpen = false" class="nav-link">
+        </router-link>
+        <router-link
+          to="/skills"
+          @click.native="menuOpen = false"
+          class="nav-link"
+        >
           <span class="nav-text">Skills</span>
           <span class="nav-hover-effect"></span>
-        </a>
-        <a href="#contact" @click="menuOpen = false" class="nav-link">
+        </router-link>
+        <router-link
+          to="/contact"
+          @click.native="menuOpen = false"
+          class="nav-link"
+        >
           <span class="nav-text">Contact</span>
           <span class="nav-hover-effect"></span>
-        </a>
+        </router-link>
       </nav>
     </header>
 
@@ -439,6 +455,10 @@ nav {
     padding: 15px 20px;
   }
 
+  .logo {
+    font-size: 1.2em;
+  }
+
   .menu-toggle {
     display: flex;
   }
@@ -476,12 +496,14 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0 20px;
   }
 
   #hero .hero-content {
     margin-top: 0;
     margin-left: 0;
     align-items: center;
+    width: 100%;
   }
 
   #hero h1 {
@@ -491,6 +513,68 @@ nav {
 
   .cta {
     font-size: 1.5rem;
+    padding: 8px 20px;
+  }
+}
+
+/* iPhone 12 Pro and similar devices (390px - 428px) */
+@media (max-width: 428px) {
+  header {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    font-size: 1em;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  nav {
+    top: 60px;
+    right: 16px;
+    width: calc(100vw - 32px);
+    max-width: 280px;
+  }
+
+  #hero {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    padding: 0 16px;
+  }
+
+  #hero .hero-content {
+    max-width: 100%;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+  }
+
+  .cta {
+    font-size: 1.2rem;
+    padding: 10px 24px;
+    margin-top: 20px;
+    white-space: nowrap;
+  }
+}
+
+/* Extra small devices (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  .logo {
+    font-size: 0.9em;
+  }
+
+  #hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .cta {
+    font-size: 1rem;
     padding: 8px 20px;
   }
 }

@@ -39,26 +39,24 @@
                 <div class="category-icon">{{ category.icon }}</div>
                 <h3 class="category-title">{{ category.title }}</h3>
               </div>
-              <div class="category-skills">
+              <div class="category-skills-chips">
                 <div
                   v-for="(skill, skillIndex) in category.skills"
                   :key="skillIndex"
-                  class="skill-item"
+                  class="skill-chip"
                 >
                   <div
                     v-if="skill.icon.startsWith('http')"
-                    class="skill-icon-wrapper"
+                    class="chip-icon-wrapper"
                   >
                     <img
                       :src="skill.icon"
                       :alt="skill.name + ' icon'"
-                      class="skill-icon"
+                      class="chip-icon"
                     />
                   </div>
-                  <div v-else class="skill-emoji-wrapper">
-                    <div class="skill-emoji">{{ skill.icon }}</div>
-                  </div>
-                  <span class="skill-name">{{ skill.name }}</span>
+                  <div v-else class="chip-emoji">{{ skill.icon }}</div>
+                  <span class="chip-label">{{ skill.name }}</span>
                 </div>
               </div>
             </div>
@@ -67,17 +65,19 @@
 
         <!-- Hobbies & Interests -->
         <div v-else-if="activeTab === 1" key="hobbies" class="content-section">
-          <div class="hobbies-grid">
+          <div class="hobbies-chips-container">
             <div
               v-for="(hobby, index) in hobbies"
               :key="index"
-              class="hobby-item"
+              class="hobby-chip"
               :class="{ visible: hobbiesVisible[index] }"
               ref="hobbyRefs"
             >
-              <div class="hobby-icon">{{ hobby.icon }}</div>
-              <h3 class="hobby-name">{{ hobby.name }}</h3>
-              <p class="hobby-description">{{ hobby.description }}</p>
+              <div class="hobby-chip-icon">{{ hobby.icon }}</div>
+              <div class="hobby-chip-content">
+                <h3 class="hobby-chip-name">{{ hobby.name }}</h3>
+                <p class="hobby-chip-description">{{ hobby.description }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -363,7 +363,8 @@ const timeline = [
   {
     year: "2025",
     title: "Thesis project & Portfolio Launch",
-    description: "Passed the Thesis defense & Created this portfolio and actively seeking opportunities",
+    description:
+      "Passed the Thesis defense & Created this portfolio and actively seeking opportunities",
   },
 ];
 
@@ -725,11 +726,11 @@ onUnmounted(() => {
   opacity: 0;
 }
 
-/* Skill Categories */
+/* Skill Categories with Chips */
 .skill-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   width: 100%;
 }
 
@@ -759,7 +760,7 @@ onUnmounted(() => {
 .skill-category:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(220, 20, 60, 0.3);
-  transform: translateY(-5px) scale(1.02);
+  transform: translateY(-5px) scale(1.01);
   box-shadow: 0 10px 25px rgba(220, 20, 60, 0.1);
 }
 
@@ -783,140 +784,133 @@ onUnmounted(() => {
   margin: 0;
 }
 
-.category-skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
-}
-
-.skill-item {
+.category-skills-chips {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-chip {
+  display: inline-flex;
   align-items: center;
-  padding: 15px 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: default;
 }
 
-.skill-item:hover {
-  transform: translateY(-3px) scale(1.05);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(220, 20, 60, 0.4);
-  box-shadow: 0 5px 15px rgba(220, 20, 60, 0.15);
+.skill-chip:hover {
+  background: rgba(220, 20, 60, 0.15);
+  border-color: rgba(220, 20, 60, 0.5);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(220, 20, 60, 0.2);
 }
 
-.skill-icon-wrapper {
-  width: 45px;
-  height: 45px;
-  margin-bottom: 10px;
+.chip-icon-wrapper {
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
-  border-radius: 8px;
-  padding: 6px;
+  border-radius: 6px;
+  padding: 3px;
+  flex-shrink: 0;
 }
 
-.skill-icon {
+.chip-icon {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.skill-emoji-wrapper {
-  width: 45px;
-  height: 45px;
-  margin-bottom: 10px;
+.chip-emoji {
+  font-size: 1.3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.chip-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Hobbies Chips */
+.hobbies-chips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hobby-chip {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 20px;
   background: rgba(220, 20, 60, 0.1);
-  border-radius: 8px;
-  border: 1px solid rgba(220, 20, 60, 0.2);
-}
-
-.skill-emoji {
-  font-size: 1.8rem;
-}
-
-.skill-name {
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-align: center;
-  line-height: 1.2;
-}
-
-/* Hobbies Grid */
-.hobbies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-.hobby-item {
-  background: rgba(220, 20, 60, 0.1);
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
   border: 1px solid rgba(220, 20, 60, 0.3);
+  border-radius: 50px;
+  padding: 15px 25px;
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
   opacity: 0;
   transform-style: preserve-3d;
 }
 
-.hobby-item:nth-child(1) {
-  transform: translateY(-100px) rotateX(45deg);
+.hobby-chip:nth-child(odd) {
+  transform: translateX(-100px) scale(0.8);
 }
 
-.hobby-item:nth-child(2) {
-  transform: translateY(100px) rotateX(-45deg);
+.hobby-chip:nth-child(even) {
+  transform: translateX(100px) scale(0.8);
 }
 
-.hobby-item:nth-child(3) {
-  transform: translateX(-100px) rotateZ(15deg);
-}
-
-.hobby-item:nth-child(4) {
-  transform: translateX(100px) rotateZ(-15deg);
-}
-
-.hobby-item:nth-child(5) {
-  transform: scale(0.5) translateY(-80px);
-}
-
-.hobby-item:nth-child(6) {
-  transform: scale(0.5) translateY(80px);
-}
-
-.hobby-item.visible {
+.hobby-chip.visible {
   opacity: 1;
-  transform: translateX(0) translateY(0) rotateX(0) rotateZ(0) scale(1);
+  transform: translateX(0) scale(1);
 }
 
-.hobby-item:hover {
-  transform: translateY(-8px) scale(1.03);
+.hobby-chip:hover {
   background: rgba(220, 20, 60, 0.2);
-  box-shadow: 0 10px 25px rgba(220, 20, 60, 0.2);
+  border-color: rgba(220, 20, 60, 0.6);
+  transform: translateX(10px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(220, 20, 60, 0.25);
 }
 
-.hobby-icon {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
+.hobby-chip-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border: 2px solid rgba(220, 20, 60, 0.3);
 }
 
-.hobby-name {
-  font-size: 1.4rem;
+.hobby-chip-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hobby-chip-name {
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin: 0 0 8px 0;
   color: #dc143c;
 }
 
-.hobby-description {
-  font-size: 1rem;
-  line-height: 1.6;
+.hobby-chip-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
   opacity: 0.9;
+  margin: 0;
 }
 
 /* Achievements Grid */
@@ -1078,48 +1072,47 @@ onUnmounted(() => {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-  }
-
+  /* Tabs container as flex for wrapping chips */
   .tab-navigation {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
   }
 
+  /* Make each tab a chip */
   .tab-box {
-    padding: 25px 15px;
+    padding: 8px 15px;
+    border-radius: 50px; /* fully rounded */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between icon and text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    transform: none; /* remove animations if needed */
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: pointer;
   }
 
-  /* Simplify mobile animations */
-  .tab-box:nth-child(1),
-  .tab-box:nth-child(2),
-  .tab-box:nth-child(3),
-  .tab-box:nth-child(4) {
-    transform: translateY(50px) scale(0.9);
-  }
-
-  .tab-box.visible {
-    transform: translateY(0) scale(1);
+  .tab-box:hover {
+    transform: scale(1.05);
   }
 
   .tab-icon {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
+    font-size: 1.5rem;
+    margin: 0; /* remove bottom margin */
   }
 
   .tab-title {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    margin: 0;
   }
 
   .tab-description {
-    font-size: 0.9rem;
+    display: none; /* hide description to make it chip-like */
   }
 
   .skill-categories {
-    grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 20px;
   }
 
   .skill-category {
@@ -1149,51 +1142,69 @@ onUnmounted(() => {
     font-size: 1.2rem;
   }
 
-  .category-skills {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 12px;
+  .category-skills-chips {
+    gap: 8px;
   }
 
-  .skill-item {
-    padding: 12px 8px;
+  .skill-chip {
+    padding: 6px 12px;
+    gap: 6px;
   }
 
-  .skill-icon-wrapper,
-  .skill-emoji-wrapper {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 8px;
+  .chip-icon-wrapper {
+    width: 20px;
+    height: 20px;
   }
 
-  .skill-emoji {
-    font-size: 1.5rem;
+  .chip-emoji {
+    font-size: 1.1rem;
   }
 
-  .skill-name {
+  .chip-label {
     font-size: 0.85rem;
   }
 
-  .hobbies-grid,
-  .achievements-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .hobbies-chips-container {
+    gap: 15px;
   }
 
-  .hobby-item {
-    padding: 25px 20px;
+  .hobby-chip {
+    padding: 12px 20px;
+    gap: 15px;
+    border-radius: 40px;
   }
 
-  .hobby-item:nth-child(1),
-  .hobby-item:nth-child(2),
-  .hobby-item:nth-child(3),
-  .hobby-item:nth-child(4),
-  .hobby-item:nth-child(5),
-  .hobby-item:nth-child(6) {
+  .hobby-chip:nth-child(odd),
+  .hobby-chip:nth-child(even) {
     transform: translateY(50px) scale(0.9);
   }
 
-  .hobby-item.visible {
+  .hobby-chip.visible {
     transform: translateY(0) scale(1);
+  }
+
+  .hobby-chip:hover {
+    transform: translateX(5px) scale(1.01);
+  }
+
+  .hobby-chip-icon {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .hobby-chip-name {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .hobby-chip-description {
+    font-size: 0.85rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .achievement-badge {
