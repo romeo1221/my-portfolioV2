@@ -302,6 +302,7 @@ const sendMessage = async () => {
 
 .contact-item-text {
   color: #d1d5db;
+  text-align: left;
 }
 
 .social-icons {
@@ -412,5 +413,111 @@ const sendMessage = async () => {
 .notice-message p {
   margin: 0;
   line-height: 1.5;
+}
+
+/* Mobile Responsive (iPhone SE and similar) - Fit in one screen */
+@media (max-width: 767px) {
+  #contact {
+    padding: 20px 12px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-grid {
+    gap: 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-description {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .contact-details-list {
+    gap: 0.75rem;
+  }
+
+  .contact-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-top: 0.25rem;
+    margin-right: 0.5rem;
+  }
+
+  .contact-item-title {
+    font-size: 0.875rem;
+    margin-bottom: 0.125rem;
+  }
+
+  .contact-item-text {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .social-icon-link {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .social-icon {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .contact-form-container {
+    padding: 1rem;
+  }
+
+  .form-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-form {
+    gap: 0.75rem;
+  }
+
+  .form-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.125rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+
+  .form-textarea {
+    min-height: 60px;
+    resize: none;
+  }
+
+  .submit-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .notice-message {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .notice-icon {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 </style>

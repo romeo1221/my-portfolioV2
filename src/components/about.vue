@@ -79,6 +79,10 @@ import abt from "../assets/abt.jpg";
   position: relative;
 }
 
+.about-text p{
+  text-align: justify;
+}
+
 .vertical-label {
   margin-left: -30px;
   display: flex;
@@ -159,6 +163,80 @@ import abt from "../assets/abt.jpg";
 
 .cta.secondary:hover {
   background-color: rgba(220, 20, 60, 0.1);
+}
+
+/* Mobile devices (iPhone 14 Pro and similar) */
+@media (max-width: 767px) {
+  #about {
+    padding: 60px 16px;
+    min-height: auto;
+  }
+
+  .about-container {
+    gap: 24px;
+  }
+
+  .about-img {
+    max-width: 240px;
+  }
+
+  .about-img img {
+    height: 320px;
+    border-radius: 12px;
+  }
+
+  .about-text {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .about-text p {
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  .vertical-label {
+    top: -40px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .more-about-link {
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: left;
+    white-space: nowrap; /* prevents wrapping */
+    color: crimson;
+  }
+
+  .vertical-label .line {
+    width: 48px;
+    margin-top: 15px;
+  }
+
+  .main-heading {
+    font-size: 1.75rem;
+    margin-left: 0;
+    padding-left: 20px;
+    margin-bottom: 16px;
+    margin-top: 20px;
+  }
+
+  .description {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0 4px;
+  }
+
+  .button-group {
+    gap: 12px;
+  }
+
+  .about-text .cta {
+    padding: 12px 20px;
+    font-size: 0.8125rem;
+  }
 }
 
 /* Tablet and Desktop layout */

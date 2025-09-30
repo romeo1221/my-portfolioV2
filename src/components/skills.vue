@@ -1105,6 +1105,7 @@ onUnmounted(() => {
   .tab-title {
     font-size: 0.9rem;
     margin: 0;
+    text-align: left;
   }
 
   .tab-description {
@@ -1205,10 +1206,19 @@ onUnmounted(() => {
   .achievements-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .achievement-badge {
-    padding: 20px;
+    padding: 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    margin: 0;
   }
 
   .achievement-badge:nth-child(odd),
@@ -1221,8 +1231,31 @@ onUnmounted(() => {
   }
 
   .badge-icon {
-    font-size: 2.5rem;
-    margin-right: 20px;
+    font-size: 2rem;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+
+  .badge-content {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .badge-title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    white-space: normal;
+  }
+
+  .badge-description {
+    font-size: 0.85rem;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  .badge-year {
+    font-size: 0.8rem;
   }
 
   .timeline {

@@ -22,7 +22,7 @@
                 <img
                   :src="project.picture_url"
                   alt="Project Image"
-                  @click="openModal(project)"
+                  @click="handleImageClick(project)"
                 />
               </div>
             </div>
@@ -34,7 +34,7 @@
               <div class="project-desc">
                 {{ project.description }}
               </div>
-              <div class="project-actions">
+              <!-- <div class="project-actions">
                 <a
                   v-if="project.project_file_url"
                   :href="project.project_file_url"
@@ -43,7 +43,7 @@
                 >
                   Download Project File
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@
             </p>
 
             <!-- Buttons -->
-            <div style="margin-top: 20px; display: flex; gap: 10px">
+            <!-- <div style="margin-top: 20px; display: flex; gap: 10px">
               <button
                 @click="downloadImage"
                 style="
@@ -113,7 +113,7 @@
               >
                 Close
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@ const projects = ref([
   },
   {
     id: 2,
-    title: "Web Dev E-commerce",
+    title: "E-commerce",
     description:
       "Our final project is a coffee shop website made by our team of three. It has user and admin pages where customers can order products and manage their profiles, while admins handle product availability. The site also includes a shopping cart and login/logout features.",
     picture_url:
@@ -184,9 +184,12 @@ const setProjectRef = (el, index) => {
 };
 
 // ---- MODAL LOGIC ----
-const openModal = (project) => {
-  selectedProject.value = project;
-  showModal.value = true;
+const handleImageClick = (project) => {
+  // Only open modal on mobile devices (width <= 768px)
+  if (window.innerWidth <= 768) {
+    selectedProject.value = project;
+    showModal.value = true;
+  }
 };
 
 const closeModal = () => {
@@ -349,8 +352,19 @@ onMounted(async () => {
 .card-outer {
   perspective: 2000px;
   -webkit-perspective: 2000px;
-  cursor: pointer;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 769px) {
+  .card-outer {
+    cursor: default;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-outer {
+    cursor: pointer;
+  }
 }
 
 .card-inner {
@@ -488,7 +502,7 @@ onMounted(async () => {
   }
 
   .project-desc {
-    font-size: 1rem;
+    display: none;
   }
 
   .all-projects {
@@ -502,11 +516,15 @@ onMounted(async () => {
     align-items: center;
   }
 
-  .download-link {
+  .project-content {
+    padding: 0px 10px;
+  }
+
+  /* .download-link {
     width: 100%;
     text-align: center;
     max-width: 250px;
-  }
+  } */
 
   .project-title {
     font-size: 1.5rem;
@@ -521,7 +539,7 @@ onMounted(async () => {
   margin-top: 50px;
 }
 
-/* Modal styles remain the same */
+/* Modal styles */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -545,6 +563,7 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: justify;
 }
 
 .modal-body {
@@ -563,7 +582,7 @@ onMounted(async () => {
   background: none;
   border: none;
   font-size: 2rem;
-  color: white;
   cursor: pointer;
+  color:#b91c1c
 }
 </style>

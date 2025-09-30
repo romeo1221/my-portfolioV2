@@ -97,21 +97,6 @@ onMounted(() => {
   }
   typeWriter();
 
-  // Scroll effects
-  window.addEventListener("scroll", () => {
-    const st = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Add background blur when scrolled
-    isScrolled.value = st > 50;
-
-    // Optional: Hide navbar on scroll down
-    // if (st > lastScrollTop && st > 100) {
-    //   hideNavbar.value = true;
-    // } else {
-    //   hideNavbar.value = false;
-    // }
-    // lastScrollTop = st <= 0 ? 0 : st;
-  });
 });
 </script>
 
