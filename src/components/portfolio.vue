@@ -31,7 +31,7 @@
           @click.native="menuOpen = false"
           class="nav-link"
         >
-          <span class="nav-text">Skills</span>
+          <span class="nav-text">Highlights</span>
           <span class="nav-hover-effect"></span>
         </router-link>
         <router-link
@@ -319,6 +319,7 @@ nav {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-top: 100px;
 }
 #hero::after {
   content: "";

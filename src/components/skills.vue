@@ -1,6 +1,6 @@
 <template>
   <section id="skills" ref="skillsSection">
-    <h1 class="section-title">About My Skills & Journey</h1>
+    <h1 class="section-title">Highlights</h1>
 
     <!-- Tab Navigation -->
     <div class="tab-navigation">
@@ -227,7 +227,7 @@ const skillCategories = [
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
       },
       {
-        name: "TypeScript",
+        name: "C",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
       },
     ],
@@ -324,14 +324,14 @@ const hobbies = [
 
   {
     name: "Learning",
-    icon: "📚",
+    icon: "🧠",
     description: "Always exploring new technologies and programming languages",
   },
 ];
 
 const achievements = [
   {
-    title: "Laravel Certification",
+    title: "College Graduate",
     description: "Completed Computer Science course",
     year: "2025",
     icon: "🎓",
@@ -687,14 +687,14 @@ onUnmounted(() => {
 .content-area {
   width: 100%;
   max-width: 1200px;
-  min-height: 500px;
+  /* min-height: 500px; */
 }
 
 .no-selection {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
+  /* min-height: 40px; */
 }
 
 .no-selection-text {

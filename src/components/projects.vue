@@ -130,8 +130,7 @@ const projects = ref([
     title: "BEEP",
     description:
       "We developed BEEP, a system for the Laoag-Batac-Paoay Transportation Group Inc. It manages bus operators, drivers, and schedules while letting users check bus availability. The system supports creating, reading, updating, and deleting records, with a user-friendly interface for efficient management and real-time updates.",
-    picture_url:
-      "beep.png",
+    picture_url: "beep.png",
     // project_file_url: "#download-ecommerce",
   },
   {
@@ -139,16 +138,14 @@ const projects = ref([
     title: "E-commerce",
     description:
       "Our final project is a coffee shop website made by our team of three. It has user and admin pages where customers can order products and manage their profiles, while admins handle product availability. The site also includes a shopping cart and login/logout features.",
-    picture_url:
-      "webdev.png",
+    picture_url: "webdev.png",
   },
   {
     id: 3,
     title: "THESIS",
     description:
       "My thesis focuses on using TinyBERT, a lightweight transformer model, for sarcasm detection in text. The goal is to improve accuracy in identifying sarcastic expressions by fine-tuning TinyBERT and comparing its performance with other models. This research highlights applications in sentiment analysis, online communication, and intelligent systems.",
-    picture_url:
-      "thesis.png",
+    picture_url: "thesis.png",
     // project_file_url: "#download-taskapp",
   },
   {
@@ -156,8 +153,7 @@ const projects = ref([
     title: "Nutri-Iloco",
     description:
       "Nutri Iloco is a mobile application concept that uses image processing to detect the nutritional content of local Ilocano dishes. For this project, we focused on the UI/UX design, creating an intuitive and user-friendly interface that helps users track food intake, promote healthy eating habits, and support awareness of traditional cuisine through technology.",
-    picture_url:
-      "nutri.png",
+    picture_url: "nutri.png",
     // project_file_url: "#download-taskapp",
   },
   {
@@ -165,8 +161,23 @@ const projects = ref([
     title: "CuddleBOT emotional Chatbot",
     description:
       "CuddleBOT is an emotional chatbot concept designed to provide users with a comforting and engaging conversational experience. For this project, we focused on the UI/UX design, creating a friendly and empathetic interface that supports emotional well-being and enhances user interaction.",
-    picture_url:
-      "cuddle.png",
+    picture_url: "cuddle.png",
+    // project_file_url: "#download-taskapp",
+  },
+  {
+    id: 6,
+    title: "Dragon Fruit Plant Health Classification Using CNN",
+    description:
+      "Developed a model using Convolutional Neural Network designed to classify images of dragon fruit plants as either“healthy” or “unhealthy”.",
+    picture_url: "df.png",
+    // project_file_url: "#download-taskapp",
+  },
+  {
+    id: 7,
+    title: "Personal Data Sheet System",
+    description:
+      "A web-based system that allows users to input, manage, and generate their Personal Data Sheet (PDS). The project features form sections for personal, family, education, work experience, and other information, with database integration and PDF export functionality for easy documentation.",
+    picture_url: "pds.png",
     // project_file_url: "#download-taskapp",
   },
 ]);
@@ -583,6 +594,6 @@ onMounted(async () => {
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  color:#b91c1c
+  color: #b91c1c;
 }
 </style>

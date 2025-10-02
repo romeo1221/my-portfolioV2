@@ -168,7 +168,7 @@ import abt from "../assets/abt.jpg";
 /* Mobile devices (iPhone 14 Pro and similar) */
 @media (max-width: 767px) {
   #about {
-    padding: 60px 16px;
+    padding: 150px 16px;
     min-height: auto;
   }
 
